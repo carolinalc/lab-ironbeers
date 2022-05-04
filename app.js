@@ -26,10 +26,9 @@ app.get('/', (req, res) => {
 app.get('/beer', (req, res) => {
   punkAPI.getBeers()
   .then(beersFromApi => {
-    let beerArr = Object.keys(punkAPI.name)
-    console.log(beerArr)
+ 
     res.render('beers.hbs', {
-    
+      beer: beersFromApi
     })
     console.log('Beers from the database: ', beersFromApi)
   
